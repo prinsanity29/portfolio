@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&display=swap');
+        
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #050505; color: #fff; scroll-behavior: smooth; overflow-x: hidden; }
+        
+        /* The Original "PrinSanity" Glass */
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.3s ease; }
+        .glass:hover { border-color: rgba(99, 102, 241, 0.4); background: rgba(255, 255, 255, 0.05); }
+        
+        .gradient-text { 
+    background: linear-gradient(90deg, #818cf8, #c084fc); 
+    -webkit-background-clip: text; 
+    background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    color: transparent; /* Fallback */
+}
+        
+        /* Modal Logic */
+        #modal { display: none; opacity: 0; transition: opacity 0.4s ease; }
+        #modal.active { display: flex; opacity: 1; }
+        .blur-target { transition: filter 0.4s ease; }
+        .active-blur { filter: blur(20px) brightness(0.5); }
+
+        /* Add this to your existing CSS */
+#modal.active { 
+    display: flex !important; 
+    opacity: 1; 
+}
+/* Brand Marquee */
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .animate-marquee { display: flex; width: 200%; animation: scroll 30s linear infinite; }
+
+        /* Ensure the marquee container is a flexbox and doesn't wrap */
+.animate-marquee {
+    display: flex;
+    white-space: nowrap;
+    width: max-content;
+    animation: scroll 30s linear infinite;
+}
+
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); } /* Moves half the width to loop perfectly */
+}
+
+/* Optional: Pause on hover so people can see the logos */
+.animate-marquee:hover {
+    animation-play-state: paused;
+}
+        
+    </style>
+ <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+</head>
+<body class="p-6 md:p-20">
+
+    <div id="content-wrapper" class="blur-target">
+        <nav class="flex flex-col md:flex-row justify-between items-center gap-4 mb-16">
+            <div class="text-2xl font-black tracking-tighter font-bold">ROHIT PRASAD<span class="text-indigo-500">.</span></div>
+            <div class="glass px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest flex gap-8">
+                <button onclick="toggleModal(true)" class="hover:text-indigo-400 transition">About Me</button>
+                <a href="#work" class="hover:text-indigo-400 transition">Portfolio</a>
+                <a href="#contact" class="hover:text-indigo-400 transition">Contact</a>
+            </div>
+        </nav>
+
+        <header class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+    <div class="md:col-span-2 glass p-8 md:p-12 rounded-[2rem] md:rounded-[3rem] flex flex-col justify-center">
+        <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-extrabold leading-tight mb-6">
+            Digital <span class="gradient-text">Architect.</span>
+        </h1>
+        <p class="text-gray-400 text-base md:text-xl max-w-xl">
+            Bridging Business Intelligence, Web Design & Brand Promotion.
+        </p>
+    </div>
+    <div class="glass rounded-[2rem] md:rounded-[3rem] aspect-square overflow-hidden group relative">
+    <img src="pfp.jpeg" alt="Rohit Prasad" 
+         class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+    
+    <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+        <span class="bg-indigo-600 px-3 py-1 rounded-lg text-[10px] font-bold uppercase">Active</span>
+    </div>
+</div>
+</header>
+
+
+        <section class="mt-24 reveal">
+    <h2 class="text-center text-gray-500 text-xs tracking-[0.5em] uppercase mb-12 font-bold">Brands I Worked For</h2>
+    <div class="glass rounded-[3rem] overflow-hidden py-12 mb-6">
+        <div class="animate-marquee items-center gap-20">
+            <span class="text-3xl font-black opacity-30 hover:opacity-100 transition cursor-default px-10">Maono</span>
+            <span class="text-3xl font-black opacity-30 hover:opacity-100 transition cursor-default px-10">GameSir</span>
+            <span class="text-3xl font-black opacity-30 hover:opacity-100 transition cursor-default px-10">Luma AI</span>
+            <span class="text-3xl font-black opacity-30 hover:opacity-100 transition cursor-default px-10">ManaBuy</span>
+            <span class="text-3xl font-black opacity-30 hover:opacity-100 transition cursor-default px-10">Blast Off Media</span>
+            <span class="text-3xl font-black opacity-30 hover:opacity-100 transition cursor-default px-10">Data Frog</span>
+            <span class="text-3xl font-black opacity-30 hover:opacity-100 transition cursor-default px-10">Emre Cem Celik</span>
+            <span class="text-3xl font-black opacity-30 hover:opacity-100 transition cursor-default px-10">AnyMind Music</span>
+        </div>
+    
+    </div>
+
+    
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+    <a href="https://youtube.com/@PrinSanity" target="_blank" rel="noopener noreferrer" 
+       class="glass py-6 rounded-2xl flex items-center justify-center gap-3 font-extrabold hover:text-red-500 transition">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" class="w-6 h-auto">
+        <span>YouTube</span>
+    </a>
+
+    <a href="https://x.com/real_prinsanity" target="_blank" rel="noopener noreferrer" 
+       class="glass py-6 rounded-2xl flex items-center justify-center gap-3 font-extrabold hover:bg-white/10 transition">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg" class="w-5 h-5 invert">
+        <span>X</span>
+    </a>
+
+    <a href="https://www.instagram.com/rohit.exe_/" target="_blank" rel="noopener noreferrer" 
+       class="glass py-6 rounded-2xl flex items-center justify-center gap-3 font-extrabold hover:text-pink-500 transition">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" class="w-5 h-5">
+        <span>Instagram</span>
+    </a>
+
+    <a href="https://www.linkedin.com/in/rohitprasad9052/" target="_blank" rel="noopener noreferrer" 
+       class="glass py-6 rounded-2xl flex items-center justify-center gap-3 font-extrabold hover:text-blue-600 transition">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="w-5 h-5">
+        <span>LinkedIn</span>
+    </a>
+</div>
+</section>
+
+<section id="contact" class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-24 mb-32">
+    <div class="glass p-6 md:p-12 rounded-[2rem] md:rounded-[3rem] bg-gradient-to-br from-indigo-900/20 to-transparent">
+        <h2 class="text-4xl font-bold mb-4">Ready to Collab?</h2>
+        <p class="text-gray-400 mb-8">Currently open for brand partnerships and data-driven projects.</p>
+        <div class="space-y-4">
+            <input type="text" id="user-email" placeholder="Your Email" class="w-full bg-white/5 border border-white/10 p-4 rounded-2xl outline-none focus:border-indigo-500 transition">
+            <textarea id="user-msg" placeholder="The Project Proposal" class="w-full bg-white/5 border border-white/10 p-4 rounded-2xl h-32 outline-none focus:border-indigo-500 transition"></textarea>
+            <button onclick="sendProposal()" class="magnetic-btn w-full bg-indigo-600 p-4 rounded-2xl font-bold hover:bg-indigo-500 transition shadow-lg shadow-indigo-500/20">
+                Send Proposal
+            </button>
+        </div>
+    </div>
+
+    <div class="flex flex-col justify-center glass p-12 rounded-[3rem]">
+    <p class="text-sm uppercase tracking-widest text-indigo-400 font-bold mb-4">Official Contact</p>
+    
+    <a href="mailto:contact.prinsanity@gmail.com" class="text-2xl font-black mb-2 hover:text-indigo-400 transition font-bold">
+        CLICK ME TO CONTACT ROHIT PRASAD AKA PRINSANITY
+    </a>
+    
+    <p class="text-gray-500">Based in Hyderabad, Telangana. Operating Globally.</p>
+</div>
+</section>
+
+<footer class="mt-32 pb-12 text-center text-gray-600 text-xs tracking-widest uppercase">
+    Designed by ROHIT PRASAD AKA PrinSanity • 2026
+</footer>
+    </div>
+
+    <div id="modal" class="fixed inset-0 z-50 flex items-center justify-center p-6">
+        <div class="absolute inset-0 bg-black/40 backdrop-blur-[30px]" onclick="toggleModal(false)"></div>
+        
+        <div class="relative glass max-w-4xl w-full rounded-[2rem] md:rounded-[4rem] p-6 md:p-16 overflow-hidden border-t border-white/20">
+            <button onclick="toggleModal(false)" class="absolute top-8 right-8 text-2xl opacity-50 hover:opacity-100 transition">✕</button>
+            
+            <div class="grid md:grid-cols-[1fr,2fr] gap-12">
+                <div class="space-y-6">
+                    <img src="pfp.jpeg" class="w-full aspect-square object-cover rounded-[2rem] border border-white/10 shadow-2xl">
+                    <div class="bg-white/5 p-6 rounded-2xl border border-white/5">
+                        <p class="text-[10px] uppercase tracking-widest text-indigo-400 font-bold mb-1">YouTube Stats</p>
+                        <p class="text-2xl font-black">100K+ <span class="text-sm font-normal text-gray-500">Subs</span></p>
+                        <p class="text-xs text-gray-400 mt-2 font-medium">Channel: PrinSanity</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-center">
+                    <h2 class="text-4xl md:text-6xl font-black mb-4 tracking-tighter">Rohit Prasad<span class="text-indigo-500">.</span></h2>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        Mastering the intersection of **Business Intelligence** and digital storytelling. I specialize in turning complex lore into viral narratives.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-y-8 gap-x-4 border-t border-white/10 pt-8">
+                        <div>
+                            <p class="text-[10px] uppercase text-gray-500 font-bold mb-1 tracking-widest">Location</p>
+                            <p class="font-bold text-sm">Hyderabad, TS, India</p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] uppercase text-gray-500 font-bold mb-1 tracking-widest">Education</p>
+                            <p class="font-bold text-sm">Computer Science Engineering (Btech), Applied Electronics And Instrumentation (Diploma)</p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] uppercase text-gray-500 font-bold mb-1 tracking-widest">Languages</p>
+                            <p class="font-bold text-sm">English, Hindi, Telugu, Bhojpuri</p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] uppercase text-gray-500 font-bold mb-1 tracking-widest">Skills</p>
+                            <p class="font-bold text-sm">Artificial Intelligence, AI Modal Training, , Web Developing, HTML, JavaScript, CSS, Python, Sales</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // 1. Initialize Icons
+    lucide.createIcons();
+
+    // 2. Modal Logic (The Fix)
+    function toggleModal(show) {
+        const modal = document.getElementById('modal');
+        const wrapper = document.getElementById('content-wrapper');
+        
+        if (show) {
+            modal.classList.add('active');
+            wrapper.classList.add('active-blur');
+            document.body.style.overflow = 'hidden';
+        } else {
+            modal.classList.remove('active');
+            wrapper.classList.remove('active-blur');
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    // 3. Magnetic Button Animation
+    const btn = document.querySelector('.magnetic-btn');
+    if(btn) {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            btn.style.transform = `translate(${(x - rect.width/2) / 5}px, ${(y - rect.height/2) / 5}px)`;
+        });
+
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = `translate(0px, 0px)`;
+        });
+    }
+
+    // 4. Backend Connection
+    async function sendProposal() {
+        const email = document.getElementById('user-email').value;
+        const msg = document.getElementById('user-msg').value;
+
+        if(!email || !msg) {
+            alert("Please fill in both fields.");
+            return;
+        }
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, message: msg })
+            });
+
+            const data = await response.json();
+            if(data.status === "success") {
+                alert("Proposal sent successfully!");
+            }
+        } catch (error) {
+            alert("Backend server not detected.");
+        }
+    }
+</script>
+</body>
+</html>
